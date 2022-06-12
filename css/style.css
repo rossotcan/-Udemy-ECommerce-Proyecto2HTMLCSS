@@ -1,0 +1,298 @@
+:root{
+    /*Paleta colores web*/
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233,287,2);
+    --blanco: #FFF;
+    --negro: #000;
+    /*Codigo que proporciona google fonts*/
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+/*Tamaño html y saltos de secciones con scroll*/
+html   {
+    font-size: 62.5%;
+    /*scroll-snap-type: y mandatory;*/
+    text-transform: uppercase;
+}
+/*
+Secciones donde quiera hacer los saltos de scroll
+.titulo,
+.contenedor h2,
+.sec-formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+*/
+
+body    {
+    font-size: 16px; /* 1 rem = 10 px */
+    /*line-height: 1.5px;*/
+    box-sizing: border-box;
+    background-color: var(--primario);
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+    text-transform: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+.contenedor{
+    max-width: 120rem;
+    /*Centrar el contenido*/
+    margin: 0 auto;
+}
+h1, h2, h3{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    color: var(--secundario);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/**Media queries
+@media (min-width: 768px){
+}
+*/
+.header{
+    display:flex;
+    justify-content: center;
+}
+.header__logo{
+    margin: 2rem 0;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: var(--primarioOscuro);
+    /*Gap es modernito y hay navegadores que no lo soportan aun*/
+    /*gap: 2rem;*/
+}
+.nav__enlaces{
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+    color: var(--blanco);
+    margin-right: 2rem;
+}
+.nav__enlaces:hover, 
+.nav__enlaces--activo{
+    color: var(--secundario);
+}
+/*Quita el margen de la derecha al último elemento del nav para que quede bien centrado*/
+.nav__enlaces:last-of-type{
+    margin-right: 0;
+}
+.contenedor h1{
+    padding: 2rem 0;
+}
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.graficos{
+    padding: 0;
+}
+.graficos--camisas{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.graficos--node{
+    grid-column: 1/3;
+    grid-row: 8/9;
+}
+/**Media queries*/
+@media (min-width: 768px){
+    .grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+    .graficos--camisas{
+        grid-row: 2/3;
+    }
+    .graficos--node{
+        grid-column: 2/4;
+        grid-row: 5/6;
+    }
+}
+.productos{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.productos__imagen{
+    width: 100%;
+}
+.productos__nombre{
+    font-size: 4rem;
+    font-family: var(--fuentePrincipal);
+    margin: 3rem 0;
+    text-align: center;
+}
+.productos__precio{
+    font-size: 2.8rem;
+    font-family: var(--fuentePrincipal);
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+    color: var(--secundario);
+}
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+}
+.descripcion{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+.descripcion__texto {
+    grid-row: 2/3;
+    line-height: 1.5;
+}
+.descripcion__imagen{
+    grid-row: 1/2;
+    background-image: url(../img/nosotros.jpg);
+    background-size: cover;
+}
+/**Media queries*/
+@media (min-width: 768px){
+    .descripcion{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 2rem;
+    }
+    .descripcion__texto{
+        grid-row: 1;
+        grid-column: 1/2;
+    }
+    .descripcion__imagen{
+        grid-row: 1;
+        grid-column: 2/3;
+    }
+}
+.icono{
+    width: 100%;
+}
+.minitextos{
+    text-align: center;
+}
+.cualidades{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+
+}
+.cualidades__precio{
+    grid-row: 1/2;
+    grid-column: 1;
+}
+.cualidades__devs{
+    grid-row: 2/3;
+    grid-column: 1;
+}
+.cualidades__envio{
+    grid-row: 1/2;
+    grid-column: 2;
+}
+.cualidades__calidad{
+    grid-row: 2/3;
+    grid-column: 2;
+}
+@media (min-width: 768px){
+    .cualidades{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+    .cualidades__precio{
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+    .cualidades__devs{
+        grid-column: 2/3;
+        grid-row: 1;
+    }
+    .cualidades__envio{
+        grid-column: 3/4;
+        grid-row: 1;
+    }
+    .cualidades__calidad{
+        grid-column: 4/5;
+        grid-row: 1;
+    }
+}
+.camisa{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+.camisa__contenido{
+    padding: 1rem;
+    text-align: left;
+    line-height: 3rem;
+}
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(1 1fr);
+    gap: 2rem;
+}
+.formulario__campo{
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid;
+    background-color: var(--primario);
+    color: var(--blanco);
+    font-size: 2rem;
+    padding: 1rem;
+    appearance: none;
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1/3;
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+
